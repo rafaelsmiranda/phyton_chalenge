@@ -1,4 +1,2 @@
-# Advertio Interview Exercise - WIP
-Pagination algorithm as a module with tests.
-
-This is a WIP. Corner cases are being analysed.
+# Advertio Interview Exercise
+Pagination algorithm as a module with tests and a main.py file with some example results.
