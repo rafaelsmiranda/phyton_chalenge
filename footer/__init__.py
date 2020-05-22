@@ -28,10 +28,6 @@ def pagination(current_page=1, total_pages=10, boundaries=1, around=0):
 
     right_boundary.append(total_pages)
 
-    # print(left_boundary)
-    # print(around_pages)
-    # print(right_boundary)
-
     pages = left_boundary
     pagination = []
 

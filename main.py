@@ -1,5 +1,3 @@
-import unittest
-
 from footer import pagination
 
 print("Advertio pagination exercise:")
