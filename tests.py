@@ -4,9 +4,6 @@ from footer import pagination
 
 
 class FooterTests(unittest.TestCase):
-    def _init_(self, testName):
-        super(FooterTests, self)._init_(testName)
-
     def pagination_default(self):
         '''Default values should work'''
         self.assertEqual(pagination(), "1 ... 10")
@@ -50,6 +47,10 @@ class FooterTests(unittest.TestCase):
         '''Negative around value should not break'''
         self.assertEqual(pagination(5, 10, 0, -1), "1 ... 10")
 
+    def pagination_around_pages_adjacent_to_right_boundary_should_have_a_single_ellipsis(self):
+        '''around_pages adjacent to right_boundary should have a single ellipsis'''
+        self.assertEqual(pagination(7, 10, 2, 1), "1 2 ... 6 7 8 9 10")
+
 
 suite = unittest.TestSuite()
 suite.addTest(FooterTests("pagination_default"))
@@ -66,4 +67,6 @@ suite.addTest(FooterTests(
     "pagination_negative_boundaries_value_should_not_break"))
 suite.addTest(FooterTests("pagination_high_around_value_should_not_break"))
 suite.addTest(FooterTests("pagination_negative_around_value_should_not_break"))
+suite.addTest(FooterTests(
+    "pagination_around_pages_adjacent_to_right_boundary_should_have_a_single_ellipsis"))
 unittest.TextTestRunner(verbosity=2).run(suite)

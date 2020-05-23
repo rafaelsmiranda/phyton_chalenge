@@ -1,6 +1,6 @@
 from footer import pagination
 
-print("Advertio pagination exercise:")
+print("Advertio footer pagination exercise:")
 print("\nExercise example 1")
 print(pagination(4, 5, 1, 0))
 
